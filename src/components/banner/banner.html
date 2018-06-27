@@ -1,0 +1,16 @@
+<!-- Generated template for the BannerComponent component -->
+<div class="wrapper" [ngStyle]="banner.type === 'plan' && {'background-image': 'url('+banner.backgroundImg+')'}" [ngClass]="{'plan-banner': banner.type === 'plan', 'cellphone-banner': banner.type === 'cellphone'}" *ngIf="banner.show">
+
+	<div class="product-image" *ngIf="banner.type === 'cellphone'">
+		<img [src]="banner.productImg" (load)="productImageLoaded()">
+	</div>
+
+	<div class="product-details" [ngStyle]="banner.type === 'cellphone' && {'width': '50%'}">
+		<div class="go-down">
+			<h1 *ngIf="banner.type === 'cellphone'">{{ banner.productName }}</h1>
+			<p>{{ banner.productDescription }}</p>
+			<button *ngIf="banner.type === 'plan'" (click)="openLink(banner.link)" ion-button color="secondary" round>{{ banner.buttonText }}</button>
+		</div>
+	</div>
+
+</div>

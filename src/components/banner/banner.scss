@@ -1,0 +1,79 @@
+@mixin bg-cover {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+banner {
+	width: 100%;
+	height: inherit;
+
+	.wrapper {
+		width: 100%;
+		height: 100%;
+		background-color: #00CE6A;
+		color: #FFFFFF;
+
+		&.plan-banner {
+			@include bg-cover;
+			
+			.product-details {
+				text-align: center;
+
+				p {
+					padding: 0 14px;
+				}
+			}
+
+			.button-md-secondary {
+				color: #FFFFFF;
+				background-color: #00CE6A;
+			}
+		}
+
+		&.cellphone-banner {
+			.product-details {
+				p, h1 {
+					padding-right: 14px;
+				}
+			}
+		}
+
+		.product-image {
+			width: 50%;
+			float: left;
+			height: 100%;
+			padding: 10px 14px;
+		}
+
+		.product-details {
+			width: 100%;
+			float: left;
+			height: 100%;
+
+			.go-down {
+				position: absolute;
+				bottom: 0;
+				width: inherit;
+			}
+
+			button {
+				margin: 0 14px 14px 14px;
+			}
+		}
+
+		.highImage {
+			height: 100%;
+			width: auto;
+			float: right;
+		}
+
+		.wideImage {
+			height: auto;
+			width: 100%;
+		}
+	}
+
+}
